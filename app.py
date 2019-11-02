@@ -12,9 +12,8 @@ class DemoOCR(Resource):
         # request JSON example: {'image_url': 'https://tinyurl.com/y4umqx6t'}
         data = request.get_json()
         if 'image_url' not in data or data['image_url'].strip() == "":
-            return {'item': None}, 404
+            return {'vin': None}, 404
         return {'vin': "1VWBT7A30EC033777"}
-
 
 api.add_resource(DemoOCR, '/extract_vin')
 app.run(port=5000, debug=True)
