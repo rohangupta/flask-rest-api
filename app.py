@@ -16,4 +16,6 @@ class DemoOCR(Resource):
         return {'vin': "1VWBT7A30EC033777"}
 
 api.add_resource(DemoOCR, '/extract_vin')
-app.run(port=5000, debug=True)
+
+if __name__ == '__main__':
+    app.run(port=5000, debug=True)
