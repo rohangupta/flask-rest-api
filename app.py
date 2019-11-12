@@ -10,11 +10,11 @@ class Title(Resource):
     def post(self):
         # REST Endpoint: http://127.0.0.1:5000/extract_vin
         # Request JSON example: {'image_url': 'https://tinyurl.com/y4umqx6t'}
-        # Response JSON example: {'vin': "1VWBT7A30EC033777"}
+        # Response JSON example: {'vin': "1VWBT7A30EC033777", 'state': "New York"}
         data = request.get_json()
         if 'image_url' not in data or data['image_url'].strip() == "":
             return {'vin': 'image url not found'}, 404
-        return {'vin': "1VWBT7A30EC033777"}
+        return {'vin': '1VWBT7A30EC033777', 'state': 'New York'}
 
 class Feedback(Resource):
     def post(self):
