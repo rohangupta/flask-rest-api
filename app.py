@@ -13,7 +13,7 @@ class Title(Resource):
         # Response JSON example: {'vin': "1VWBT7A30EC033777", 'state': "New York"}
         data = request.get_json()
         if 'image_url' not in data or data['image_url'].strip() == "":
-            return {'vin': 'image url not found'}, 404
+            return {'message': 'image url not found'}, 404
         return {'vin': '1VWBT7A30EC033777', 'state': 'New York'}
 
 class Feedback(Resource):
@@ -23,8 +23,7 @@ class Feedback(Resource):
         # Response JSON example: {}
         data = request.get_json()
         if 'image_url' not in data or data['image_url'].strip() == "":
-            return {}, 404
-        print('feedback: '+data['feedback'])
+            return {'message': 'image url not found'}, 404
         return {}
 
 api.add_resource(Title, '/extract_vin')
